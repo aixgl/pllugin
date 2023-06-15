@@ -1,9 +1,9 @@
 package gate
 
 import (
-	"github.com/slclub/leaf/chanrpc"
-	"github.com/slclub/leaf/log"
-	"github.com/slclub/leaf/network"
+	"github.com/aixgl/plugin/leaf/chanrpc"
+	"github.com/aixgl/plugin/leaf/log"
+	"github.com/aixgl/plugin/leaf/network"
 	"net"
 	"reflect"
 	"time"

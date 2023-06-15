@@ -1,8 +1,8 @@
 package module
 
 import (
-	"github.com/slclub/leaf/conf"
-	"github.com/slclub/leaf/log"
+	"github.com/aixgl/plugin/leaf/conf"
+	"github.com/aixgl/plugin/leaf/log"
 	"runtime"
 	"sync"
 )

@@ -7,17 +7,17 @@ Leaf champions below philosophies:
 
 * Simple APIs. Leaf tends to provide simple and plain interfaces which are always best for use.
 * Self-healing. Leaf always tries to salvage the process from runtime errors instead of leaving it to crash.
-* Multi-core support. Leaf utilize its modules and [leaf/go](https://github.com/slclub/leaf/tree/master/go) to make use of CPU resouces at maximum while avoiding varieties of side effects may be caused.
+* Multi-core support. Leaf utilize its modules and [leaf/go](https://github.com/aixgl/plugin/leaf/tree/master/go) to make use of CPU resouces at maximum while avoiding varieties of side effects may be caused.
 
 * Module-based.
 
 Leaf's Modules
 --------------
 
-A game server implemented with Leaf may include many modules (e.g. [LeafServer](https://github.com/slclub/leafserver)) which all share below traits:
+A game server implemented with Leaf may include many modules (e.g. [LeafServer](https://github.com/aixgl/plugin/leafserver)) which all share below traits:
 
 * Each module runs inside a separate goroutine
-* Modules communicate with one another via a light weight RPC channel([leaf/chanrpc](https://github.com/slclub/leaf/tree/master/chanrpc))
+* Modules communicate with one another via a light weight RPC channel([leaf/chanrpc](https://github.com/aixgl/plugin/leaf/tree/master/chanrpc))
 
 Leaf suggests not to take in too many modules in your game server implementation.
 
@@ -63,18 +63,18 @@ Leaf source code directories
 How to use Leaf
 ---------------
 
-[LeafServer](https://github.com/slclub/leafserver) is a game server developped with Leaf. Let's start with it.
+[LeafServer](https://github.com/aixgl/plugin/leafserver) is a game server developped with Leaf. Let's start with it.
 
 Download the source code of LeafServer：
 
 ```
-git clone https://github.com/slclub/leafserver
+git clone https://github.com/aixgl/plugin/leafserver
 ```
 
 Download and install leafserver to GOPATH:
 
 ```
-go get github.com/slclub/leaf
+go get github.com/aixgl/plugin/leaf
 ```
 
 Compile LeafServer：

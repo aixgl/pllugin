@@ -2,7 +2,6 @@ package login
 
 import (
 	"github.com/slclub/go-tips/stringbyte"
-	"server/conf"
 	"strings"
 )
 
@@ -19,5 +18,5 @@ func DataSrvRoute(req_path string) string {
 }
 
 func DataSrvDomain() string {
-	return strings.Join([]string{conf.TomlConf.DataSrv.Scheme, conf.TomlConf.DataSrv.Addr}, "")
+	return strings.Join([]string{Database.Scheme, Database.Addr}, "")
 }

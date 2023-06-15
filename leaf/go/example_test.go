@@ -2,7 +2,7 @@ package g_test
 
 import (
 	"fmt"
-	"github.com/slclub/leaf/go"
+	"github.com/aixgl/plugin/leaf/go"
 	"time"
 )
 

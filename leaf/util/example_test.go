@@ -2,7 +2,7 @@ package util_test
 
 import (
 	"fmt"
-	"github.com/slclub/leaf/util"
+	"github.com/aixgl/plugin/leaf/util"
 )
 
 func ExampleMap() {

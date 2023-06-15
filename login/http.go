@@ -3,8 +3,8 @@ package login
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/slclub/leaf/log"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/url"
 	"strings"
@@ -18,11 +18,11 @@ import (
 func Get(address string, dest interface{}) error {
 	resp, err := request("GET", address, nil)
 	if err != nil {
-		log.Error("[GET][REQ]" + err.Error())
+		log.Print("[GET][REQ]" + err.Error())
 	}
 	err = json.Unmarshal(resp, dest)
 	if err != nil {
-		log.Error("[GET][Unmarshal]" + err.Error())
+		log.Print("[GET][Unmarshal]" + err.Error())
 	}
 	return err
 }
@@ -30,11 +30,11 @@ func Get(address string, dest interface{}) error {
 func Post(address string, data map[string]interface{}, dest interface{}) error {
 	resp, err := request("POST", address, data)
 	if err != nil {
-		log.Error("[POST][REQ]" + err.Error())
+		log.Print("[POST][REQ]" + err.Error())
 	}
 	err = json.Unmarshal(resp, dest)
 	if err != nil {
-		log.Error("[POST][Unmarshal]" + err.Error())
+		log.Print("[POST][Unmarshal]" + err.Error())
 	}
 	return err
 }
@@ -42,11 +42,11 @@ func Post(address string, data map[string]interface{}, dest interface{}) error {
 func PostForm(address string, data map[string]interface{}, dest interface{}) error {
 	resp, err := request("FORM", address, data)
 	if err != nil {
-		log.Error("[POSTFORM][REQ]" + err.Error())
+		log.Print("[POSTFORM][REQ]" + err.Error())
 	}
 	err = json.Unmarshal(resp, dest)
 	if err != nil {
-		log.Error("[POSTFORM][Unmarshal]" + err.Error())
+		log.Print("[POSTFORM][Unmarshal]" + err.Error())
 	}
 	return err
 }
@@ -71,13 +71,13 @@ func request(method string, address string, data map[string]interface{}) ([]byte
 	}
 
 	if err != nil {
-		log.Error("[HTTP][method:%s][url:%s][param:%s]error:", method, address, data, err.Error())
+		log.Print("[HTTP][method:%s][url:%s][param:%s]error:", method, address, data, err.Error())
 		return []byte{}, nil
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Error("[HTTP][BODY][READ]%s", err.Error())
+		log.Print("[HTTP][BODY][READ]%s", err.Error())
 	}
 	return body, err
 }

@@ -1,10 +1,10 @@
 package module
 
 import (
-	"github.com/slclub/leaf/chanrpc"
-	"github.com/slclub/leaf/console"
-	"github.com/slclub/leaf/go"
-	"github.com/slclub/leaf/timer"
+	"github.com/aixgl/plugin/leaf/chanrpc"
+	"github.com/aixgl/plugin/leaf/console"
+	"github.com/aixgl/plugin/leaf/go"
+	"github.com/aixgl/plugin/leaf/timer"
 	"time"
 )
 

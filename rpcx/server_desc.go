@@ -2,7 +2,6 @@ package rpcx
 
 import (
 	"context"
-	"server/msg/code"
 )
 
 var _serv_desc *serverDesc
@@ -37,6 +36,6 @@ type ServerDescSync struct {
 
 func (ServerDescSync) SyncID(ctx context.Context, req *RequestDesc, res *ResponseDesc) error {
 	//ServerDesc().ServerID = req.ID
-	res.MsgCode = code.SUCCESS
+	//res.MsgCode = code.SUCCESS
 	return nil
 }

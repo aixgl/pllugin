@@ -1,7 +1,7 @@
 package network
 
 import (
-	"github.com/slclub/leaf/log"
+	"github.com/aixgl/plugin/leaf/log"
 	"net"
 	"sync"
 	"time"

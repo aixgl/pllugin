@@ -3,9 +3,9 @@ package chanrpc
 import (
 	"errors"
 	"fmt"
-	"github.com/slclub/leaf/conf"
-	"github.com/slclub/leaf/log"
-	"github.com/slclub/leaf/util"
+	"github.com/aixgl/plugin/leaf/conf"
+	"github.com/aixgl/plugin/leaf/log"
+	"github.com/aixgl/plugin/leaf/util"
 	"runtime"
 )
 

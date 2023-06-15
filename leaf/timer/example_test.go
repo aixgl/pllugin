@@ -2,7 +2,7 @@ package timer_test
 
 import (
 	"fmt"
-	"github.com/slclub/leaf/timer"
+	"github.com/aixgl/plugin/leaf/timer"
 	"time"
 )
 

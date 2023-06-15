@@ -1,7 +1,7 @@
 package log_test
 
 import (
-	"github.com/slclub/leaf/log"
+	"github.com/aixgl/plugin/leaf/log"
 	l "log"
 )
 

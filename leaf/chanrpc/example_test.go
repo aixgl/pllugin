@@ -2,7 +2,7 @@ package chanrpc_test
 
 import (
 	"fmt"
-	"github.com/slclub/leaf/chanrpc"
+	"github.com/aixgl/plugin/leaf/chanrpc"
 	"sync"
 )
 

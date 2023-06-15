@@ -2,8 +2,8 @@ package console
 
 import (
 	"bufio"
-	"github.com/slclub/leaf/conf"
-	"github.com/slclub/leaf/network"
+	"github.com/aixgl/plugin/leaf/conf"
+	"github.com/aixgl/plugin/leaf/network"
 	"math"
 	"strconv"
 	"strings"

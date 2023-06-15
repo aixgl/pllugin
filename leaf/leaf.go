@@ -1,11 +1,11 @@
 package leaf
 
 import (
-	"github.com/slclub/leaf/cluster"
-	//"github.com/slclub/leaf/conf"
-	"github.com/slclub/leaf/console"
-	"github.com/slclub/leaf/log"
-	"github.com/slclub/leaf/module"
+	"github.com/aixgl/plugin/leaf/cluster"
+	//"github.com/aixgl/plugin/leaf/conf"
+	"github.com/aixgl/plugin/leaf/console"
+	"github.com/aixgl/plugin/leaf/log"
+	"github.com/aixgl/plugin/leaf/module"
 	"os"
 	"os/signal"
 )

@@ -3,7 +3,6 @@ package login
 import (
 	"fmt"
 	"os"
-	"server/conf"
 	"testing"
 )
 
@@ -15,7 +14,7 @@ func testinit() {
 	fmt.Println(root_path)
 
 	// 初始化配置
-	conf.ReadTomlFrom(root_path+"conf/conf.toml", &conf.TomlConf)
+	//conf.ReadTomlFrom(root_path+"conf/conf.toml", &conf.TomlConf)
 }
 func TestLoginInfo(t *testing.T) {
 	testinit()
