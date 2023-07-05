@@ -92,30 +92,32 @@ type agent struct {
 func (a *agent) Run() {
 	defer a.conn.Close()
 	for {
-
-		data, err := a.conn.ReadMsg()
-		if err != nil {
-			log.Debug("read message: %v", err)
-
+		select {
+		case <-a.conn.Done():
 			return
-		}
+		default:
+			data, err := a.conn.ReadMsg()
+			if err != nil {
+				log.Debug("read message: %v", err)
 
-		if a.gate.Processor == nil {
-			continue
-		}
-		msg, err := a.gate.Processor.Unmarshal(data)
-		if err != nil {
-			log.Debug("unmarshal message error: %v", err)
-			return
-		}
-		err = a.gate.Processor.Route(msg, a)
-		if err != nil {
-			log.Debug("route message error: %v", err)
-			return
-		}
+				return
+			}
 
+			if a.gate.Processor == nil {
+				continue
+			}
+			msg, err := a.gate.Processor.Unmarshal(data)
+			if err != nil {
+				log.Debug("unmarshal message error: %v", err)
+				return
+			}
+			err = a.gate.Processor.Route(msg, a)
+			if err != nil {
+				log.Debug("route message error: %v", err)
+				return
+			}
+		}
 	}
-
 }
 
 func (a *agent) OnClose() {

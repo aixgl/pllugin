@@ -110,3 +110,7 @@ func (tcpConn *TCPConn) ReadMsg() ([]byte, error) {
 func (tcpConn *TCPConn) WriteMsg(args ...[]byte) error {
 	return tcpConn.msgParser.Write(tcpConn, args...)
 }
+
+func (tcpConn *TCPConn) Done() chan struct{} {
+	return nil
+}
