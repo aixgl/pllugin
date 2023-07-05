@@ -28,11 +28,11 @@ func newWSConn(conn *websocket.Conn, pendingWriteNum int, maxMsgLen uint32) *WSC
 	wsConn.StopChan = make(chan struct{})
 
 	go func() {
-		defer wsConn.Close()
+		defer wsConn.Destroy()
 		for {
 			select {
 			case <-wsConn.Done():
-
+				wsConn.conn.WriteMessage(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseNormalClosure, ""))
 				return
 			case b := <-wsConn.writeChan:
 				if b == nil {
@@ -57,13 +57,13 @@ func newWSConn(conn *websocket.Conn, pendingWriteNum int, maxMsgLen uint32) *WSC
 }
 
 func (wsConn *WSConn) doDestroy() {
-	//wsConn.conn.UnderlyingConn().(*net.TCPConn).SetLinger(0)
-	//wsConn.conn.Close()
+	wsConn.conn.UnderlyingConn().(*net.TCPConn).SetLinger(0)
+	wsConn.conn.Close()
 	//
-	//if !wsConn.closeFlag {
-	//	close(wsConn.writeChan)
-	//	wsConn.closeFlag = true
-	//}
+	if !wsConn.closeFlag {
+		close(wsConn.writeChan)
+		wsConn.closeFlag = true
+	}
 }
 
 func (wsConn *WSConn) Destroy() {
@@ -82,7 +82,7 @@ func (wsConn *WSConn) Close() {
 	//wsConn.doWrite(nil)
 	close(wsConn.StopChan)
 	close(wsConn.writeChan)
-	wsConn.conn.Close()
+	//wsConn.conn.Close()
 	wsConn.closeFlag = true
 	//wsConn.conn.UnderlyingConn().(*net.TCPConn).SetLinger(0)
 }

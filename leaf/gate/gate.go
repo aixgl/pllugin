@@ -94,12 +94,12 @@ func (a *agent) Run() {
 	for {
 		select {
 		case <-a.conn.Done():
+			//a.conn.WriteMsg()
 			return
 		default:
 			data, err := a.conn.ReadMsg()
 			if err != nil {
 				log.Debug("read message: %v", err)
-
 				return
 			}
 
