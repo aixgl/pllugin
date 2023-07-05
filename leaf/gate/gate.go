@@ -99,7 +99,7 @@ func (a *agent) Run() {
 		default:
 			data, err := a.conn.ReadMsg()
 			if err != nil {
-				log.Debug("read message: %v", err)
+				log.Debug("agent read connection error message: %v", err)
 				return
 			}
 
